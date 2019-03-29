@@ -49,7 +49,7 @@ describe 'Toy Robot Application' do
                 "MOVE",
                 "MOVE",
                 "REPORT"]
-    expected_output = "4,3,NORTH\n"
+    expected_output = "4,2,NORTH\n"
     expect{@toy_robot.process_commands(commands)}.to output(expected_output).to_stdout
   end
 end
