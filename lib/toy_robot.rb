@@ -30,7 +30,8 @@ class ToyRobot
   def place(place)
     # extract position x & y
     place_options = place.gsub("PLACE ", "").split(",")
-    place_robot([place_options[0].to_i, place_options[1].to_i], place_options[2])
+    place_robot([place_options[0].to_i, place_options[1].to_i], 
+                  place_options[2])
   end
 
   # similar to plcae, but with refined options
@@ -62,10 +63,14 @@ class ToyRobot
   # Reports robot's current place and direction
   def report
     if @toy_place
-      puts "#{@toy_place[0]},#{@toy_place[1]},#{@toy_direction}"
+      report_str = @toy_place[0].to_s + ","
+      report_str += @toy_place[1].to_s + ","
+      report_str += @toy_direction
     else
-      puts "Out of table top - please provide a valid PLACE command"
+      report_str = "Out of table top - "
+      report_str += "please provide a valid PLACE command"
     end
+    OutputLogger.log_output report_str
   end
 
   # Rotates robot's by given direction 90 degrees
