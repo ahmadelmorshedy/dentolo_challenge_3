@@ -97,3 +97,45 @@ REPORT
 ## Acknowledgement
 
 The Toy Robot Challenge was originally formulated by [Jon Eaves](https://twitter.com/joneaves)
+
+----------------
+
+## Technical specs
+
+run & tested using ruby 2.5.0
+
+## Running the application
+
+You can run
+
+```
+ruby application.rb
+```
+
+then enter the commands, one per line, and the REPORT command should be the last one
+
+## Running specs
+
+run
+
+```
+bundle exec rspec
+```
+
+to run all specs
+
+You can also run only integration specs
+
+```
+bundle  exec rspec spec/integration/integration.spec
+
+## Implementation strategy
+
+I began incrementely, beginning with almost one or two files, having all the logic of the applications, then,
+started to extract classes/modules based on Responsibility and Extendibility
+
+## Future work
+
+* Implement more TableTop classes (only square table top implemented now)
+* Implement other other methods for InputReader modules
+* Change/replace code in OutputLogger to change the output fomat
